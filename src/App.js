@@ -1,30 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Toolbar, NavItem, Space } from 'rebass';
-import { Link } from 'react-router-dom';
+import { Toolbar, Space } from 'rebass';
+import { Link, withRouter } from 'react-router-dom';
+import Routes from './Routes';
+import RouteNavItem from './components/RouteNavItem';
 
 class App extends Component {
+
+  handleNavLink = (event) => {
+    event.preventDefault();
+    this.props.history.push(event.currentTarget.getAttribute('href'));
+  }
+
   render() {
     return (
       <div className="App">
         <Toolbar>
-          <NavItem is="a" href="http://nytimes.com">
+          <RouteNavItem href="http://nytimes.com">
             Toolbar
-          </NavItem>
-          <NavItem is="a" to="/"> {/*???*/}
+          </RouteNavItem>
+          <RouteNavItem to="/"> {/*???*/}
             Scratch 
-          </NavItem>
+          </RouteNavItem>
           <Space
             auto
             x={1}
           />
-          <NavItem is="a">
-            NavItem
-          </NavItem>
+          <RouteNavItem onClick={this.handleNavLink} href="/signup">
+            Signup
+          </RouteNavItem>
+          <RouteNavItem onClick={this.handleNavLink} href="/login">
+            login
+          </RouteNavItem>
         </Toolbar>
+        <Routes /> {/*???*/}
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
+
