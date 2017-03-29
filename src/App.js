@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Toolbar, Space } from 'rebass';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Routes from './Routes';
 import RouteNavItem from './components/RouteNavItem';
 
@@ -19,7 +19,7 @@ class App extends Component {
           <RouteNavItem href="http://nytimes.com">
             Toolbar
           </RouteNavItem>
-          <RouteNavItem to="/"> {/*???*/}
+          <RouteNavItem href="/"> {/*???*/}
             Scratch 
           </RouteNavItem>
           <Space

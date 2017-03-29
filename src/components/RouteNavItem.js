@@ -2,10 +2,12 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { NavItem } from 'rebass';
 
+var navStyle = {
+  color: 'red'
+}
+
 export default (props) => (
   <Route path={props.href} exact children={({ match }) => (
-    <NavItem is="a" {...props} active={ match ? true : false }>{ props.children }</NavItem>
-   
-
-  )}/>  //* TODO: fix active prop error
+    <NavItem is="a" {...props} style={match ? navStyle : {} }>{ props.children }</NavItem>
+  )}/> 
 );
