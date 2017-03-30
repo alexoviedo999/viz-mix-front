@@ -9,6 +9,7 @@ class App extends Component {
 
   handleNavLink = (event) => {
     event.preventDefault();
+    debugger;
     this.props.history.push(event.currentTarget.getAttribute('href'));
   }
 

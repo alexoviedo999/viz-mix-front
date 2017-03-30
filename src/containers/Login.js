@@ -37,8 +37,8 @@ class Login extends Component {
     return (
         
       <div className="Login">
-        <Container>
-            <Box col={4}>
+        <Flex justify="center">
+            <Box col={4} p={4}>
                 <form onSubmit={this.handleSubmit}>
                     <Input
                     autoFocus
@@ -63,7 +63,7 @@ class Login extends Component {
                 </Button>
                 </form>
             </Box>
-        </Container>
+        </Flex>
       </div>
     );
   }
