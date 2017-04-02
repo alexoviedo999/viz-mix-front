@@ -6,6 +6,7 @@
     "amazon-cognito-identity-js": "^1.16.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-geomicons": "^2.1.0",
     "react-router-dom": "^4.0.0",
     "rebass": "^0.3.4"
   },

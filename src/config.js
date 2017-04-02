@@ -4,3 +4,5 @@ export default {
     APP_CLIENT_ID : '2lbt4lulrrib3avnrpcjgldgf1',
   }
 };
+
+{/* set up env variables and remove from github ???*/}

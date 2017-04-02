@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from '../config.js';
+import { withRouter } from 'react-router-dom';
 import {
   CognitoUserPool,
   AuthenticationDetails,
@@ -12,6 +13,7 @@ import {
     Block,
     Container
 } from 'rebass';
+import LoaderButton from '../components/LoaderButton';
 
 
 class Login extends Component {
@@ -19,6 +21,7 @@ class Login extends Component {
     super(props);
 
     this.state = {
+      isLoading: false,
       username: '',
       password: '',
     };
@@ -59,12 +62,16 @@ class Login extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
 
+    this.setState({ isLoading: true });
+
     try {
       const userToken = await this.login(this.state.username, this.state.password);
-      alert(userToken);
+      this.props.updateUserToken(userToken);
+      this.props.history.push('/');
     }
     catch(e) {
       alert(e);
+      this.setState({ isLoading: false });
     }
   }
 
@@ -91,11 +98,19 @@ class Login extends Component {
                     onChange={this.handleChange}
                     name="password"
                     type="password" />
-                <Button
-                    disabled={ ! this.validateForm() }
-                    type="submit">
-                    Login
-                </Button>
+
+
+
+
+                <LoaderButton
+                  
+                  disabled={ ! this.validateForm() }
+                  type="submit"
+                  isLoading={this.state.isLoading}
+                  text="Login"
+                  loadingText="Logging in…" />
+
+
                 </form>
             </Box>
         </Flex>
@@ -104,4 +119,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
