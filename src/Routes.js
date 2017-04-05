@@ -10,6 +10,8 @@ import Signup from './containers/Signup';
 export default ({ childProps }) => (
   <Switch>
     <AppliedRoute path="/" exact component={Home} props={childProps} />
+    {/*<Route path="/" exact render={(props)=> <Home {...props} {...childProps} />} /> */}
+
     <AppliedRoute path="/login" exact component={Login} props={childProps} />
     <AppliedRoute path="/card/:id" component={CardContainer} props={childProps}/>
     <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
