@@ -6,6 +6,7 @@ import Home from './containers/Home';
 import CardContainer from './containers/CardContainer';
 import AppliedRoute from './components/AppliedRoute';
 import Signup from './containers/Signup';
+import NewScene from './containers/NewScene';
 
 export default ({ childProps }) => (
   <Switch>
@@ -15,6 +16,7 @@ export default ({ childProps }) => (
     <AppliedRoute path="/login" exact component={Login} props={childProps} />
     <AppliedRoute path="/card/:id" component={CardContainer} props={childProps}/>
     <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
+    <AppliedRoute path="/scenes/new" exact component={NewScene} props={childProps} />
     { /* Catch all unmatched routes */ }
     <Route component={NotFound} />
   </Switch>

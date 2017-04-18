@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import {Button, Input, Block, Container} from 'rebass';
+import {Input} from 'rebass';
 import {Flex, Box} from 'reflexbox';
 import LoaderButton from '../components/LoaderButton';
 import {
@@ -144,8 +144,6 @@ class Signup extends Component {
                                 onChange={this.handleChange}/>
                             <h3>Please check your email for the code.</h3>
                             <LoaderButton
-                                block
-                                bsSize="large"
                                 disabled={!this.validateConfirmationForm()}
                                 type="submit"
                                 isLoading={this.state.isLoading}
@@ -184,8 +182,6 @@ class Signup extends Component {
                                 onChange={this.handleChange}
                                 type="password"/>
                             <LoaderButton
-                                block
-                                bsSize="large"
                                 disabled={!this.validateForm()}
                                 type="submit"
                                 isLoading={this.state.isLoading}
@@ -210,5 +206,3 @@ class Signup extends Component {
 }
 
 export default withRouter(Signup);
-
-{/* withRouter ???*/}

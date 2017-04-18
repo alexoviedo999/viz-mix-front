@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card as RebassCard, CardImage, Heading, Text } from 'rebass';
-import { Flex, Box } from 'reflexbox';
+import { Box } from 'reflexbox';
 
 class Card extends Component {
   render() {

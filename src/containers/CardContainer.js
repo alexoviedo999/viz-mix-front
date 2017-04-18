@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Card from '../components/Card';
 import { Flex, Box } from 'reflexbox';
 import './Home.css';
 

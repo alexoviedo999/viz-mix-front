@@ -3,7 +3,7 @@ import config from '../config.js';
 import {withRouter} from 'react-router-dom';
 import {CognitoUserPool, AuthenticationDetails, CognitoUser} from 'amazon-cognito-identity-js';
 import {Flex, Box} from 'reflexbox';
-import {Button, Input, Block, Container} from 'rebass';
+import {Input} from 'rebass';
 import LoaderButton from '../components/LoaderButton';
 
 class Login extends Component {

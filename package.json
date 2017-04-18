@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "amazon-cognito-identity-js": "^1.16.0",
+    "aws-sdk": "^2.41.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-geomicons": "^2.1.0",
@@ -11,6 +12,7 @@
     "rebass": "^0.3.4"
   },
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.0.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
