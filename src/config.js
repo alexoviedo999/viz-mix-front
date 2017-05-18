@@ -1,7 +1,7 @@
 export default {
   MAX_ATTACHMENT_SIZE: 5000000,
   s3: {
-    BUCKET: 'notes-app-api-prod-serverlessdeploymentbucket-1jcv46evi03pj'
+    BUCKET: 'scene-bucket'
   },
   apiGateway: {
     URL: 'https://ew6j61zae8.execute-api.us-east-1.amazonaws.com/prod',

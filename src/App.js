@@ -6,6 +6,7 @@ import Routes from './Routes';
 import RouteNavItem from './components/RouteNavItem';
 import { CognitoUserPool, } from 'amazon-cognito-identity-js';
 import config from './config.js';
+import AWS from 'aws-sdk';
 
 class App extends Component {
 
@@ -36,7 +37,12 @@ class App extends Component {
       currentUser.signOut();
     }
 
+    if (AWS.config.credentials) {
+      AWS.config.credentials.clearCachedId();
+    }
+
     this.updateUserToken(null);
+
     this.props.history.push('/login');
   }
 
@@ -61,7 +67,7 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    const currentUser = this.getCurrentUser(); {/* underdand async ???*/}
+    const currentUser = this.getCurrentUser();
 
     if (currentUser === null) {
       this.setState({isLoadingUserToken: false});
@@ -110,4 +116,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App); {/* childprops vs. withRouter ???*/}
+export default withRouter(App);
