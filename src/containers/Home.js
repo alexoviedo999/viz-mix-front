@@ -30,7 +30,7 @@ class Home extends Component {
 
     try {
       const results = await this.notes();
-      this.setState({ notes: results });
+      this.setState({ scenes: results });
     }
     catch(e) {
       alert(e);
