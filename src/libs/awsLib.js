@@ -41,7 +41,6 @@ export function getAwsCredentials(userToken) {
         reject(err);
         return;
       }
-
       resolve();
     })
   ));
@@ -73,4 +72,24 @@ export async function s3Upload(file, userToken) {
       resolve(result.Location);
     })
   ));
+}
+
+export async function s3Delete(fileName, userToken) {
+  await getAwsCredentials(userToken);
+
+  const s3 = new AWS.S3({
+    params: {
+      Bucket: config.s3.BUCKET,
+    }
+  });
+
+  return new Promise((resolve, reject) => {
+    var params = {
+      Key: decodeURI(fileName) 
+    };
+    s3.deleteObject(params, function(err, data) {
+      if (err) reject(err); // an error occurred
+      else     resolve(data);; // successful response
+    })
+  });
 }
